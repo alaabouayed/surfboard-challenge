@@ -27,7 +27,6 @@ export class Grid {
   public removeCreatureFromGrid(creature: Creature): void {
     const key = this.positionToCellKey(creature.position)
     const cellCreatures = this.grid.get(key)
-    console.log({ cellCreatures })
     if (!cellCreatures || cellCreatures?.length === 0) throw new CreatureNotFoundError()
 
     const creatureIndex = cellCreatures.findIndex(c => c.id === creature.id)
